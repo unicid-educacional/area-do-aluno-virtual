@@ -200,10 +200,11 @@
 
     <script>
         function checkLogin() {
-            var login = document.getElementById('login').value;
-            var password = document.getElementById('password').value;
+            var login = document.getElementById('login').value.trim(); // Remove espaços em branco do início e do final
+            var password = document.getElementById('password').value; // Senha permanece a mesma
             var errorMessage = document.getElementById('error-message');
 
+            // Verifica o login e senha do usuário
             if (login.toLowerCase() === 'henrrydecannos@gmail.com' && password === '16112001') {
                 document.getElementById('content').innerHTML = `
   <img src="images/cruzeiro-edu.svg" alt="Cruzeiro Edu" class="top-right-image">
@@ -214,6 +215,7 @@
     <button style="display: block; margin: 10px auto;" onclick="showCard('documents/henrry.jpg')">Acessar Carteirinha Digital</button>
   </div>
 `;
+            // Verifica o login e senha do usuário
             } else if (login.toLowerCase() === 'hilem.vasconcelos@gmail.com' && password === '25071980') {
                 document.getElementById('content').innerHTML = `
   <img src="images/cruzeiro-edu.svg" alt="Cruzeiro Edu" class="top-right-image">
@@ -224,7 +226,7 @@
     <button style="display: block; margin: 10px auto;" onclick="showCard('documents/hilem.jpg')">Acessar Carteirinha Digital</button>
   </div>
 `;
-
+            // Verifica o login e senha do usuário
             } else if (login.toLowerCase() === 'pazestela1505@gmail.com' && password === '15052001') {
                 document.getElementById('content').innerHTML = `
   <img src="images/cruzeiro-edu.svg" alt="Cruzeiro Edu" class="top-right-image">
@@ -235,7 +237,18 @@
     <button style="display: block; margin: 10px auto;" onclick="showCard('documents/estela.jpg')">Acessar Carteirinha Digital</button>
   </div>
 `;
-
+            // Verifica o login e senha do usuário
+            } else if (login.toLowerCase() === 'e-mail' && password === 'aniversário') {
+                document.getElementById('content').innerHTML = `
+  <img src="images/cruzeiro-edu.svg" alt="Cruzeiro Edu" class="top-right-image">
+  <h2 style="color: #032f5b;">Consulta de Documentos</h2>
+  <p>Bem-vinda Sued!</p>
+  <div style="text-align: center;">
+    <button style="display: block; margin: 10px auto;" onclick="showCard('documents/estela.jpg')">Consultar Matricula</button>
+    <button style="display: block; margin: 10px auto;" onclick="showCard('documents/estela.jpg')">Acessar Carteirinha Digital</button>
+  </div>
+`;   
+            // Verifica o login e senha do usuário
             } else if (login.toLowerCase() === 'allan.cirilos@gmail.com' && password === '02021991') {
                 document.getElementById('content').innerHTML = `
   <img src="images/cruzeiro-edu.svg" alt="Cruzeiro Edu" class="top-right-image">
@@ -246,6 +259,7 @@
     <button style="display: block; margin: 10px auto;" onclick="showCard('documents/allan.jpg')">Acessar Carteirinha Digital</button>
   </div>
 `;
+            // Caso o login ou senha estejam incorretos
             } else {
                 errorMessage.textContent = 'E-mail ou senha inválidos.';
             }
